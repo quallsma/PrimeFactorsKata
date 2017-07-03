@@ -52,8 +52,23 @@ public class PrimeFactorGeneratorTest {
     }
 
     @Test
-    public void GetPrimeFactorsReturnListOfOneWhenGivenOne() {
+    public void GetPrimeFactorsReturnListOfNoneWhenGivenOne() {
 
-        Assert.assertEquals(Arrays.asList(1), generator.GetPrimeFactors(1));
+        Assert.assertEquals(Arrays.asList(), generator.GetPrimeFactors(1));
+    }
+
+    @Test
+    public void GetPrimeFactorsReturns2WhenGivenTwo() {
+        Assert.assertEquals(Arrays.asList(2), generator.GetPrimeFactors(2));
+    }
+
+    @Test
+    public void GetPrimeFactorsReturnsListOfPrimeFactorsTo4() {
+        Assert.assertEquals(Arrays.asList(2, 2), generator.GetPrimeFactors(4));
+    }
+
+    @Test
+    public void GetPrimeFactorsReturnsListOfPrimeFactorsTo9() {
+        Assert.assertEquals(Arrays.asList(3, 3), generator.GetPrimeFactors(9));
     }
 }

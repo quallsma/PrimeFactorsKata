@@ -19,6 +19,19 @@ public class PrimeFactorGenerator {
     }
 
     public List<Integer> GetPrimeFactors(int number){
-        return Arrays.asList(1);
+        List<Integer> list = new ArrayList<>();
+        if (number <= 1)
+            return list;
+        if (IsPrime(number))
+            return Arrays.asList(number);
+
+        for (int x = 2; x <= number / 2; x++){
+            if(number % x == 0){
+                list.add(x); list.add(number / x);
+                break;
+            }
+        }
+
+        return list;
     }
 }
