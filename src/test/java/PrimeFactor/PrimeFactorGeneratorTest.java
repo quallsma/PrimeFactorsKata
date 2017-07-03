@@ -58,17 +58,47 @@ public class PrimeFactorGeneratorTest {
     }
 
     @Test
+    public void GetPrimeFactorsReturnsListOfNoneWhenGivenNegativeNumber() {
+        Assert.assertEquals(Arrays.asList(), generator.GetPrimeFactors(-1));
+    }
+
+    @Test
     public void GetPrimeFactorsReturns2WhenGivenTwo() {
         Assert.assertEquals(Arrays.asList(2), generator.GetPrimeFactors(2));
     }
 
     @Test
-    public void GetPrimeFactorsReturnsListOfPrimeFactorsTo4() {
+    public void GetPrimeFactorsReturnsListOfPrimeFactorsFor4() {
         Assert.assertEquals(Arrays.asList(2, 2), generator.GetPrimeFactors(4));
     }
 
     @Test
-    public void GetPrimeFactorsReturnsListOfPrimeFactorsTo9() {
+    public void GetPrimeFactorsReturnsListOfPrimeFactorsFor6() {
+        Assert.assertEquals(Arrays.asList(2, 3), generator.GetPrimeFactors(6));
+    }
+
+    @Test
+    public void GetPrimeFactorsReturnsListOfPrimeFactorsFor9() {
         Assert.assertEquals(Arrays.asList(3, 3), generator.GetPrimeFactors(9));
+    }
+
+    @Test
+    public void GetPrimeFactorsReturnsListOfPrimeFactorsFor8() {
+        Assert.assertEquals(Arrays.asList(2, 2, 2), generator.GetPrimeFactors(8));
+    }
+
+    @Test
+    public void GetPrimeFactorsReturnsListOfPrimeFactorsFor24() {
+        Assert.assertEquals(Arrays.asList(2, 2, 2, 3), generator.GetPrimeFactors(24));
+    }
+
+    @Test
+    public void GetPrimeFactorsReturnsListOfPrimeFactorsFor90() {
+        Assert.assertEquals(Arrays.asList(2, 3, 3, 5), generator.GetPrimeFactors(90));
+    }
+
+    @Test
+    public void GetPrimeFactorsReturnsListOfPrimeFactorsFor100() {
+        Assert.assertEquals(Arrays.asList(2, 2, 5, 5), generator.GetPrimeFactors(100));
     }
 }
