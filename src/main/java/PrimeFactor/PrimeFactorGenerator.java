@@ -28,17 +28,10 @@ public class PrimeFactorGenerator {
             return Arrays.asList(number);
 
         List<Integer> list = new ArrayList<>();
-        for (int x = 2; x <= number / 2; x++){
-            if(number % x == 0){
-
+        for (int x = 2;number >= 2; x++){
+            while(number % x == 0){
                 list.add(x);
-
-                int quotient = number / x;
-                if(IsPrime(quotient))
-                    list.add(quotient);
-                else
-                    list.addAll(GetPrimeFactors(quotient));
-                break;
+                number /= x;
             }
         }
         return list;
