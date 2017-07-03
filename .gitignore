@@ -1,18 +1,10 @@
-# Created by .ignore support plugin (hsz.mobi)
-### Gradle template
-.gradle
-/build/
-.idea
-/src/main/webapp
-# Ignore Gradle GUI config
-gradle-app.setting
+*.jar
 
-# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
-!gradle-wrapper.jar
+.gradle/
+build/
+.idea/
 
-# Cache of project
-.gradletasknamecache
-
-# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
-# gradle/wrapper/gradle-wrapper.properties
-
+src/.DS_Store
+src/main/.DS_Store
+src/test/.DS_Store
+src/test/java/.DS_Store
