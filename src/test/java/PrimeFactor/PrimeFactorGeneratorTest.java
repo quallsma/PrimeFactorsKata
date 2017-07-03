@@ -101,4 +101,9 @@ public class PrimeFactorGeneratorTest {
     public void GetPrimeFactorsReturnsListOfPrimeFactorsFor100() {
         Assert.assertEquals(Arrays.asList(2, 2, 5, 5), generator.GetPrimeFactors(100));
     }
+
+    @Test
+    public void GetPrimeFactorsReturnsListOfPrimeFactorsFor97() {
+        Assert.assertEquals(Arrays.asList(97), generator.GetPrimeFactors(97));
+    }
 }
