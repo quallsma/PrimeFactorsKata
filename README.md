@@ -1,1 +1,1 @@
-# PrimeFactorsKata
+# Prime Factors Kata using Java

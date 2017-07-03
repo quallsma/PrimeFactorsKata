@@ -4,15 +4,16 @@ package PrimeFactor;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.experimental.theories.suppliers.TestedOn;
 
-public class PrimeFactorTest {
+import java.util.Arrays;
 
-    private PrimeFactor prime;
+public class PrimeFactorGeneratorTest {
+
+    private PrimeFactorGenerator generator;
 
     @Before
     public void setup() {
-        prime = new PrimeFactor();
+        generator = new PrimeFactorGenerator();
     }
 
     @Test
@@ -22,31 +23,37 @@ public class PrimeFactorTest {
 
     @Test
     public void IsPrimeShouldReturnTrueWhenGivenOne(){
-        Assert.assertTrue(prime.IsPrime(1));
+        Assert.assertTrue(generator.IsPrime(1));
     }
 
     @Test
     public void IsPrimeShouldReturnFalseWhenGivenFour() {
-        Assert.assertFalse(prime.IsPrime(4));
+        Assert.assertFalse(generator.IsPrime(4));
     }
 
     @Test
     public void IsPrimeShouldReturnTrueWhenGivenFive() {
-        Assert.assertTrue(prime.IsPrime(5));
+        Assert.assertTrue(generator.IsPrime(5));
     }
 
     @Test
     public void IsPrimeShouldReturnFalseWhenGivenSix() {
-        Assert.assertFalse(prime.IsPrime(6));
+        Assert.assertFalse(generator.IsPrime(6));
     }
 
     @Test
     public void IsPrimeShouldReturnFalseWhenGivenNine() {
-        Assert.assertFalse(prime.IsPrime(9));
+        Assert.assertFalse(generator.IsPrime(9));
     }
 
     @Test
     public void IsPrimeShouldReturnFalseWhenGiven49() {
-        Assert.assertFalse(prime.IsPrime(49));
+        Assert.assertFalse(generator.IsPrime(49));
+    }
+
+    @Test
+    public void GetPrimeFactorsReturnListOfOneWhenGivenOne() {
+
+        Assert.assertEquals(Arrays.asList(1), generator.GetPrimeFactors(1));
     }
 }
