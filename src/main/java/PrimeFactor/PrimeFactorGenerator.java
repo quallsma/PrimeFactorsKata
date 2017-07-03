@@ -20,13 +20,14 @@ public class PrimeFactorGenerator {
     }
 
     public List<Integer> GetPrimeFactors(int number){
-        List<Integer> list = new ArrayList<>();
+
         if (number <= 1)
-            return list;
+            return Arrays.asList();
 
         if (IsPrime(number))
             return Arrays.asList(number);
 
+        List<Integer> list = new ArrayList<>();
         for (int x = 2; x <= number / 2; x++){
             if(number % x == 0){
 
@@ -34,13 +35,12 @@ public class PrimeFactorGenerator {
 
                 int quotient = number / x;
                 if(IsPrime(quotient))
-                    list.add(number / x);
+                    list.add(quotient);
                 else
                     list.addAll(GetPrimeFactors(quotient));
                 break;
             }
         }
-
         return list;
     }
 }
